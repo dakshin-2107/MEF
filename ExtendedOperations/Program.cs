@@ -4,6 +4,15 @@ using SimpleCalculator;
 
 namespace ExtendedOperations
 {
+	public class ExtendedOperations
+	{
+		public static void Main(string[] args)
+		{
+
+		}
+	}
+
+
 	[Export(typeof(IOperation))]
 	[ExportMetadata("Symbol", '%')]
 	public class Mod : IOperation
@@ -13,6 +22,8 @@ namespace ExtendedOperations
 			return left % right;
 		}
 	}
+
+
 
 }
 

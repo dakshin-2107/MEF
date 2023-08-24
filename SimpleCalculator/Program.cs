@@ -29,7 +29,11 @@ namespace SimpleCalculator
 				// An aggregate catalog that combines multiple catalogs.
 				var catalog = new AggregateCatalog();
 				// Adds all the parts found in the same assembly as the Program class.
-				catalog.Catalogs.Add(new AssemblyCatalog(typeof(Program).Assembly));
+				// catalog.Catalogs.Add(new AssemblyCatalog(typeof(Program).Assembly));
+				//  PS We have made the output of the Extension project, the Extension folder. 
+				//  The DirectoryCatalog will now add any parts found
+				//  in any assemblies in the Extensions directory to the composition container.
+				catalog.Catalogs.Add(new DirectoryCatalog("./../../../Extensions/Debug/net7.0"));
 
 				// Create the CompositionContainer with the parts in the catalog.
 				_container = new CompositionContainer(catalog);
